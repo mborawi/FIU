@@ -59,7 +59,8 @@ def clean(path, outpath = None):
 		for i in range(len(data['CTRID'])):
 			line = ''
 			for val in headers:
-				line += data[val][i]
+				# line += data[val][i]
+				line += "\"{}\"".format(data[val][i].replace('"', ''))
 				line += ","
 			line += "\n"
 			fout.write(line)

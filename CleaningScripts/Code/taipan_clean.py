@@ -167,7 +167,7 @@ def run():
     	"PersonInTransaction_cashAmount"]
 
 	Tk().withdraw() #dont need a console open
-	zippaths = filedialog.askopenfiles(mode ='r', filetypes =[('CTR and TIP CSVs', '*.csv')])
+	zippaths = filedialog.askopenfiles(mode ='r', filetypes =[('CTR and TIP CSVs', '.csv .CSV')])
 	if len(zippaths)!=2:
 		# print error message using GUI
 		print("need two files",len(zippaths), zippaths)
