@@ -60,7 +60,7 @@ def clean(path, outpath = None):
 			line = ''
 			for val in headers:
 				# line += data[val][i]
-				line += "\"{}\"".format(data[val][i].replace('"', ''))
+				line += data[val][i]
 				line += ","
 			line += "\n"
 			fout.write(line)
