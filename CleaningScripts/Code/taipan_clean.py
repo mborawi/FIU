@@ -92,9 +92,14 @@ def clean_pit(path, headers, outpath = None):
 			if data['CTRID'][i] not in taipan_pit_data:
 				taipan_pit_data[data['CTRID'][i]] = []
 			for val in headers:
-				line += data[val][i]
+				# line += data[val][i]
 				colName = get_taipan_friendly_header(val, "PersonInTransaction")
-				record[colName] = data[val][i]
+				field = data[val][i]
+				if ',' in field and not field.startswith('"'):
+					field = '"{}"'.format(field)
+				# record[colName] = data[val][i]
+				record[colName] = field
+				line += field
 				line += ","
 			taipan_pit_data[data['CTRID'][i]].append(record)
 			line += "\n"
